@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ready for Business | Der Event für den erfolgreichen Karrierestart</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Vorgegebener Farbcode */
+            --color-darkblue: #002394;
+            --color-midblue: #217FAB;
+            --color-cyan: #00AEEF;
+            
+            /* Neutrale Farbtöne */
+            --color-bg-light: #F4F7FA;
+            --color-surface: #FFFFFF;
+            --color-text-main: #1E293B;
+            --color-text-muted: #64748B;
+            --color-border: #E2E8F0;
+            
+            /* Design-Elemente */
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 35, 148, 0.05);
+            --shadow-md: 0 10px 25px -5px rgba(0, 35, 148, 0.1);
+            --shadow-lg: 0 20px 30px -10px rgba(0, 35, 148, 0.15);
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg-light);
+            color: var(--color-text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 35, 148, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--color-darkblue);
+            text-decoration: none;
+        }
+
+        .logo-badge {
+            background: linear-gradient(135deg, var(--color-midblue), var(--color-cyan));
+            color: white;
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-cyan);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-darkblue), var(--color-midblue));
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 35, 148, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 35, 148, 0.4);
+            background: linear-gradient(135deg, var(--color-midblue), var(--color-cyan));
+        }
+
+        .btn-secondary {
+            background: rgba(0, 174, 239, 0.1);
+            color: var(--color-darkblue);
+            border: 1px solid rgba(0, 174, 239, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 174, 239, 0.2);
+            color: var(--color-darkblue);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            padding: 9rem 0 5rem;
+            background: radial-gradient(circle at 90% 10%, rgba(0, 174, 239, 0.12) 0%, transparent 40%),
+                        radial-gradient(circle at 10% 90%, rgba(0, 35, 148, 0.08) 0%, transparent 50%);
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 35, 148, 0.06);
+            border: 1px solid rgba(0, 35, 148, 0.15);
+            color: var(--color-darkblue);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--color-darkblue);
+            margin-bottom: 1.2rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--color-midblue), var(--color-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
+            max-width: 90%;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .event-card-quick {
+            background: var(--color-surface);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--color-border);
+            position: relative;
+        }
+
+        .event-card-quick::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--color-darkblue), var(--color-midblue), var(--color-cyan));
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        }
+
+        .quick-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .quick-info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .quick-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(0, 174, 239, 0.1);
+            color: var(--color-midblue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .quick-text h4 {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .quick-text p {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--color-darkblue);
+            margin: 0;
+        }
+
+        /* --- THEMEN / SENSITIVITÄT --- */
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--color-midblue);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.3rem;
+            color: var(--color-darkblue);
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            color: var(--color-text-muted);
+            font-size: 1.05rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--color-surface);
+            padding: 2.2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(0, 174, 239, 0.4);
+        }
+
+        .feature-icon-wrapper {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--color-darkblue), var(--color-midblue));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 6px 15px rgba(0, 35, 148, 0.2);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            color: var(--color-darkblue);
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-card p {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- AGENDA SECTION (DIE KERN-TIMELINE) --- */
+        .agenda-section {
+            background: white;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .timeline-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border-radius: 30px;
+            border: 1px solid var(--color-border);
+            background: var(--color-bg-light);
+            color: var(--color-text-muted);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--color-darkblue);
+            color: white;
+            border-color: var(--color-darkblue);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--color-darkblue), var(--color-midblue), var(--color-cyan));
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 3rem;
+            position: relative;
+            margin-bottom: 2.5rem;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(even) {
+            align-self: flex-end;
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 3rem;
+            margin-left: auto;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            right: -10px;
+            top: 15px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--color-surface);
+            border: 4px solid var(--color-midblue);
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            right: auto;
+            left: -10px;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            border-color: var(--color-cyan);
+            transform: scale(1.3);
+            background: var(--color-darkblue);
+        }
+
+        .timeline-content {
+            background: var(--color-bg-light);
+            padding: 1.8rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+            width: 100%;
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover .timeline-content {
+            box-shadow: var(--shadow-md);
+            background: white;
+            border-color: rgba(0, 174, 239, 0.3);
+        }
+
+        .timeline-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-intro { background: rgba(0, 35, 148, 0.1); color: var(--color-darkblue); }
+        .badge-input { background: rgba(33, 127, 171, 0.15); color: var(--color-midblue); }
+        .badge-game { background: rgba(0, 174, 239, 0.15); color: #0088bc; }
+        .badge-network { background: rgba(16, 185, 129, 0.15); color: #059669; }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            color: var(--color-darkblue);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- APRENTAS / PARTNER SECTION --- */
+        .partner-box {
+            background: linear-gradient(135deg, var(--color-darkblue) 0%, #00155a 100%);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: 4rem 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .partner-box::after {
+            content: '';
+            position: absolute;
+            right: -100px;
+            bottom: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 174, 239, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .partner-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .partner-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .partner-text p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .partner-highlights {
+            list-style: none;
+        }
+
+        .partner-highlights li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .partner-highlights i {
+            color: var(--color-cyan);
+        }
+
+        .partner-badge-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .partner-tag {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+        }
+
+        /* --- ANMELDUNG & CTA --- */
+        .cta-section {
+            text-align: center;
+        }
+
+        .cta-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 4rem 2rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--color-border);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .registration-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-darkblue);
+        }
+
+        .form-group input, .form-group select {
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--color-border);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--color-midblue);
+            box-shadow: 0 0 0 3px rgba(33, 127, 171, 0.2);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--color-darkblue);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            max-width: 350px;
+        }
+
+        .footer-links h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--color-cyan);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .partner-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 3rem !important;
+                padding-right: 0 !important;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-dot {
+                left: 10px !important;
+                right: auto !important;
+            }
+
+            .registration-form {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: span 1;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                Ready for Business
+                <span class="logo-badge">KV 2026</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">Über den Event</a></li>
+                <li><a href="#programm">Programm</a></li>
+                <li><a href="#aprentas">Grundausbildung</a></li>
+                <li><a href="#anmeldung" class="btn btn-primary">Anmelden</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <div class="hero-tag">
+                    <i class="fa-solid fa-graduation-cap"></i> Exklusiver KV-Event der 1.-Lernenden
+                </div>
+                <h1>Bereit für die <span>Geschäftswelt</span> von morgen?</h1>
+                <p>Erlebe einen interaktiven Anlass voller Impulse zu Kommunikation, Teamwork und professionellem Auftreten. Gestaltet von Lernenden für zukünftige Macher.</p>
+                <div class="hero-actions">
+                    <a href="#anmeldung" class="btn btn-primary">
+                        <i class="fa-solid fa-ticket"></i> Platz sichern
+                    </a>
+                    <a href="#programm" class="btn btn-secondary">
+                        <i class="fa-solid fa-list-check"></i> Ablauf ansehen
+                    </a>
+                </div>
+            </div>
+
+            <div class="event-card-quick">
+                <div class="quick-info-item">
+                    <div class="quick-icon">
+                        <i class="fa-regular fa-calendar"></i>
+                    </div>
+                    <div class="quick-text">
+                        <h4>Datum & Zeit</h4>
+                        <p>Kommender Anlass, 16:00 Uhr</p>
+                    </div>
+                </div>
+                <div class="quick-info-item">
+                    <div class="quick-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="quick-text">
+                        <h4>Location</h4>
+                        <p>Ausbildungszentrum aprentas</p>
+                    </div>
+                </div>
+                <div class="quick-info-item">
+                    <div class="quick-icon">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <div class="quick-text">
+                        <h4>Highlights</h4>
+                        <p>Interactive Quizzes & Networking</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENT SENSITIVITÄT & ZIELE -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Was erwartet dich?</span>
+                <h2 class="section-title">Erfolg braucht Vorbereitung</h2>
+                <p class="section-description">Der Übergang in die Berufs- und KV-Welt bringt neue Herausforderungen mit sich. An unserem Anlass vermitteln wir praxisnah die drei wichtigsten Pfeiler des Business-Alltags.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3>Professionelle Kommunikation</h3>
+                    <p>Verstehe, worauf es beim schriftlichen und mündlichen Austausch mit Kollegen und Kunden ankommt. Vergleiche Theorie und Praxis.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <h3>Echtes Teamwork</h3>
+                    <p>Erfahre, wie Zusammenarbeit über Unternehmensgrenzen hinweg funktioniert und wie man gemeinsam Projektziele erreicht.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3>Überzeugendes Auftreten</h3>
+                    <p>Der erste Eindruck zählt! Wir geben Einblicke in Dresscodes, Haltung und Selbstbewusstsein im geschäftlichen Alltag.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMM (AGENDA) -->
+    <section id="programm" class="section-padding agenda-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Detaillierter Ablauf</span>
+                <h2 class="section-title">Das Event-Programm</h2>
+                <p class="section-description">Ein abwechslungsreicher Mix aus Inputs, spielerischen Quizzes und gemütlichem Austausch.</p>
+            </div>
+
+            <div class="timeline">
+
+                <!-- Programmpunkt 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-badge badge-intro">Einführung</span>
+                        <h3 class="timeline-title">1. Begrüssung & Einführung</h3>
+                        <p class="timeline-desc">Herzlicher Empfang aller Gäste. Wir stellen das Motto <strong>"Ready for Business"</strong> vor und erklären die Ziele des Abends.</p>
+                    </div>
+                </div>
+
+                <!-- Programmpunkt 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-badge badge-input">Input</span>
+                        <h3 class="timeline-title">2. Kurzer Input & Ablauf</h3>
+                        <p class="timeline-desc">Kompakte Präsentation der Schlüsselelemente für die Arbeitswelt: Erfolgsfaktoren für Kommunikation, Teamwork und starkes Auftreten.</p>
+                    </div>
+                </div>
+
+                <!-- Programmpunkt 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-badge badge-game">Interaktiv</span>
+                        <h3 class="timeline-title">3. Spiel 1: Business Kahoot</h3>
+                        <p class="timeline-desc">Smartphone bereitmachen! Im interaktiven Kahoot-Quiz testen wir spielerisch dein Wissen rund um Business-Etikette und KV-Standards.</p>
+                    </div>
+                </div>
+
+                <!-- Programmpunkt 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-badge badge-input">Präsentation</span>
+                        <h3 class="timeline-title">4. Unsere Präsentation</h3>
+                        <p class="timeline-desc">Spannende Einblicke in unsere Grundausbildung, Praxisbeispiele und persönliche Lerneffekte aus dem ersten Lehrjahr.</p>
+                    </div>
+                </div>
+
+                <!-- Programmpunkt 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-badge badge-game">Interaktiv</span>
+                        <h3 class="timeline-title">5. Spiel 2: Wer wird Millionär?</h3>
+                        <p class="timeline-desc">Das berühmte Quizformat im Business-Style! Knackst du die kniffligen Fragen und wirst zum Business-Millionär des Abends?</p>
+                    </div>
+                </div>
+
+                <!-- Programmpunkt 6 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-badge badge-intro">Feedback</span>
+                        <h3 class="timeline-title">6. Feedback-Runde</h3>
+                        <p class="timeline-desc">Kurze gemeinsame Reflexion, deine Meinung zum Event und der offizielle Abschluss unserer Präsentation.</p>
+                    </div>
+                </div>
+
+                <!-- Programmpunkt 7 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-badge badge-network">Networking</span>
+                        <h3 class="timeline-title">7. Catering, Networking & Abschied</h3>
+                        <p class="timeline-desc">Leckeres Essen, kühle Getränke und entspanntes Gegenseitiges Kennenlernen. Wer bereits gehen möchte, darf sich hier verabschieden.</p>
+                    </div>
+                </div>
+
+                <!-- Programmpunkt 8 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-badge badge-intro">Schluss</span>
+                        <h3 class="timeline-title">8. Offizieller Schluss</h3>
+                        <p class="timeline-desc">Herzliche Verabschiedung der verbliebenen Gäste und Ausklang eines gelungenen Anlasses.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- APRENTAS & HINTERGRUND -->
+    <section id="aprentas" class="section-padding">
+        <div class="container">
+            <div class="partner-box">
+                <div class="partner-grid">
+                    <div class="partner-text">
+                        <h2>Grundausbildung bei aprentas</h2>
+                        <p>Das Fundament unserer kaufmännischen Lehre bilden die intensiv geschulten Kernkompetenzen bei der aprentas. Hier lernen wir, worauf es im Berufsleben wirklich ankommt.</p>
+                        <ul class="partner-highlights">
+                            <li><i class="fa-solid fa-circle-check"></i> Praxisnahe Schulungen & KV-Methodik</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Fundiertes Training von Soft-Skills</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Optimaler Start in den Betrieb</li>
+                        </ul>
+                    </div>
+                    <div class="partner-badge-container">
+                        <div class="partner-tag">
+                            <span>Ausbildungskooperation</span>
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <div class="partner-tag">
+                            <span>Kaufmännische Lehre (KV)</span>
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <div class="partner-tag">
+                            <span>1. Lehrjahr Projekt</span>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANMELDUNG SECTION -->
+    <section id="anmeldung" class="section-padding cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <span class="section-subtitle">Dabei sein & Mitmachen</span>
+                <h2 class="section-title">Melde dich jetzt zum Anlass an</h2>
+                <p class="section-description">Sichere dir deinen Platz für einen lehrreichen, unterhaltsamen und schmackhaften Abend.</p>
+
+                <form class="registration-form" onsubmit="event.preventDefault(); alert('Vielen Dank für deine Anmeldung zum Ready for Business Anlass!');">
+                    <div class="form-group">
+                        <label for="fname">Vorname</label>
+                        <input type="text" id="fname" placeholder="Max" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lname">Nachname</label>
+                        <input type="text" id="lname" placeholder="Muster" required>
+                    </div>
+                    <div class="form-group full">
+                        <label for="email">E-Mail Adresse</label>
+                        <input type="email" id="email" placeholder="max.muster@beispiel.ch" required>
+                    </div>
+                    <div class="form-group full">
+                        <label for="status">Ich nehme teil als</label>
+                        <select id="status">
+                            <option>Gast / Interessent</option>
+                            <option>Lernende/r</option>
+                            <option>Berufsbildner/in</option>
+                        </select>
+                    </div>
+                    <div class="form-group full">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: var(--radius-sm); padding: 1rem;">
+                            <i class="fa-solid fa-paper-plane"></i> Verbindlich Anmelden
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Ready for Business</h3>
+                    <p>Ein Projekt-Event im Rahmen der KV-Grundausbildung bei aprentas. Vorbereitung für eine erfolgreiche berufliche Zukunft.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#about">Über den Event</a></li>
+                        <li><a href="#programm">Ablauf & Agenda</a></li>
+                        <li><a href="#aprentas">aprentas Grundausbildung</a></li>
+                        <li><a href="#anmeldung">Anmeldung</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Themen</h4>
+                    <ul>
+                        <li><a href="#about">Kommunikation</a></li>
+                        <li><a href="#about">Teamwork</a></li>
+                        <li><a href="#about">Auftreten</a></li>
+                        <li><a href="#programm">Networking</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ready for Business Event | Erstellt im 1. Lehrjahr KV</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
